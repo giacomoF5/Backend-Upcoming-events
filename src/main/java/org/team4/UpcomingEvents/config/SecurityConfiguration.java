@@ -1,4 +1,4 @@
-package org.team4.UpcomingEvents.config;
+package org.team4.upcomingevents.config;
 
 import java.util.ArrayList;
 import java.util.Arrays;

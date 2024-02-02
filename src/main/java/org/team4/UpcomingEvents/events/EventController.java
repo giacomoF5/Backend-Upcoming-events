@@ -28,14 +28,12 @@ public EventController(EventService eventService){
 
 }
 
-@GetMapping(path = "") 
+/* @GetMapping(path = "") 
 
     public List<Event> index() {
         
-        List<Event> events = eventService.getAll();
-        return events;
-
-    }
+    
+} */
 }
 
 

@@ -1,4 +1,4 @@
-package org.team4.UpcomingEvents;
+package org.team4.upcomingevents;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

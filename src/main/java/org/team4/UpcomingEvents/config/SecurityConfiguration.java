@@ -1,4 +1,4 @@
-package org.team4.UpcomingEvents.config;
+package org.team4.upcomingevents.config;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -74,7 +74,7 @@ public class SecurityConfiguration {
         // The builder will ensure the passwords are encoded before saving in memory
         UserDetails admin = User.builder()
                 .username("admin")
-                .password("{bcrypt}$2a$12$8LegtLQWe717tIPvZeivjuqKnaAs5.bm0Q05.5GrAmcKzXw2NjoUO")
+                .password("$2a$12$8LegtLQWe717tIPvZeivjuqKnaAs5.bm0Q05.5GrAmcKzXw2NjoUO")
                 .roles("ADMIN")
                 .build();
 

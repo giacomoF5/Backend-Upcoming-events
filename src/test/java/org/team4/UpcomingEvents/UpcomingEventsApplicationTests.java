@@ -1,4 +1,4 @@
-package org.team4.UpcomingEvents;
+package org.team4.upcomingevents;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

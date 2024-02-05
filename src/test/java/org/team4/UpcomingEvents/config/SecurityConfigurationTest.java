@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -20,6 +21,7 @@ import org.springframework.web.context.WebApplicationContext;
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration
 @SuppressWarnings("all")
+
 public class SecurityConfigurationTest {
 
     @Autowired
@@ -35,6 +37,7 @@ public class SecurityConfigurationTest {
     }
 
     @Test
+    @WithMockUser
     void testRouteAllEventsPublic() throws Exception {
         
         this.mockMvc.perform(get("/api/v1/events"))
@@ -42,8 +45,5 @@ public class SecurityConfigurationTest {
         .andReturn()
         .getResponse();
 
-    }
-
-    
-    
+    }  
 }

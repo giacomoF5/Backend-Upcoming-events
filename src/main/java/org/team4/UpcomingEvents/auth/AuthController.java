@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     @GetMapping(path="/login")
-
     public ResponseEntity<Map<String,String>> login() {
 
         SecurityContext contextHolder = SecurityContextHolder.getContext();
@@ -29,7 +28,5 @@ public class AuthController {
         json.put("roles", auth.getAuthorities().iterator().next().toString());
 
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(json);
-
-        
     }
 }

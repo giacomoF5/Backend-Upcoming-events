@@ -1,4 +1,4 @@
-package org.team4.UpcomingEvents.events;
+package org.team4.upcomingevents.events;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

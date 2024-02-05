@@ -1,4 +1,4 @@
-package org.team4.UpcomingEvents.events;
+package org.team4.upcomingevents.events;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

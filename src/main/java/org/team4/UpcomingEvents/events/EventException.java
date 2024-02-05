@@ -1,4 +1,4 @@
-package org.team4.UpcomingEvents.events;
+package org.team4.upcomingevents.events;
 
 public class EventException extends RuntimeException {
     

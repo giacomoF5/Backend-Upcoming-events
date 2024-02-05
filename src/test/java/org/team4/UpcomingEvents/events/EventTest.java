@@ -1,4 +1,4 @@
-package org.team4.UpcomingEvents.events;
+package org.team4.upcomingevents.events;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;

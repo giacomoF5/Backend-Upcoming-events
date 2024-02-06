@@ -39,7 +39,7 @@ public class EventService {
             repository.save(newEvent);
 
             Long eventsTableQuantity = (long) repository.findAll().size();
-            Event event = repository.findById(eventsTableQuantity).orElseThrow();
+            Event event = repository.findById(eventsTableQuantity).orElseThrow( () -> new EventNotFoundException("Event not found"));
             return event;
         } catch (Exception e) {
             throw new Exception("Error al guardar en base de datos" + e.getMessage());

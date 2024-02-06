@@ -36,8 +36,9 @@ public class EventController {
     }
 
     @PostMapping(path = "")
-    public void store(@RequestBody EventDto eventDto) throws Exception {
-        eventService.save(eventDto);
+    public ResponseEntity<Event> store(@RequestBody EventDto eventDto) throws Exception {
+        Event event = eventService.save(eventDto);
+        return ResponseEntity.status(201).body(event);
     }
 
 }

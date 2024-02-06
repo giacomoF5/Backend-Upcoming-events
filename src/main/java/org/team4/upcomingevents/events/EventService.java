@@ -26,7 +26,7 @@ public class EventService {
         return event;
     }
 
-    public void save(EventDto eventDto) throws Exception {
+    public Event save(EventDto eventDto) throws Exception {
         
         try {
             Event newEvent = Event.builder()
@@ -36,8 +36,11 @@ public class EventService {
                                 .place(eventDto.getPlace())
                                 .description(eventDto.getDescription())
                                 .build();
-    
             repository.save(newEvent);
+
+            Long eventsTableQuantity = (long) repository.findAll().size();
+            Event event = repository.findById(eventsTableQuantity).orElseThrow();
+            return event;
         } catch (Exception e) {
             throw new Exception("Error al guardar en base de datos" + e.getMessage());
         }

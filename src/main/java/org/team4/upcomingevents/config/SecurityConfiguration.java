@@ -41,6 +41,7 @@ public class SecurityConfiguration {
                         .deleteCookies("JSESSIONID"))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET, endpoint + "/events").permitAll()
+                        .requestMatchers(HttpMethod.POST, endpoint + "/events").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.GET, endpoint + "/login").hasAnyRole("ADMIN")
                         .requestMatchers(HttpMethod.GET, endpoint + "/images").permitAll()
                         .anyRequest().authenticated())

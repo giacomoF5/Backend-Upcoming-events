@@ -6,7 +6,7 @@ import org.team4.upcomingevents.encryptations.base64facade.Base64Encoder;
 import org.team4.upcomingevents.encryptations.bcryptfacade.BcryptEncoder;
 
 @Component
-public class EncoderFacade {
+public class EncoderFacade implements IEncryptFacade {
     
     BCryptPasswordEncoder bCryptPasswordEncoder;
 

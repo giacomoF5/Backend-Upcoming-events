@@ -40,10 +40,10 @@ public class SecurityConfiguration {
                         .logoutUrl(endpoint + "/logout")
                         .deleteCookies("JSESSIONID"))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.GET, endpoint + "/events").permitAll()
-                        .requestMatchers(HttpMethod.POST, endpoint + "/events").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET, endpoint + "/login").hasAnyRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET, endpoint + "/images/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, endpoint + "/events", endpoint + "/images/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, endpoint + "/users/register").permitAll()
+                        .requestMatchers(HttpMethod.POST, endpoint + "/events", endpoint+"/images").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, endpoint + "/login").hasAnyRole("ADMIN","USER")
                         .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session

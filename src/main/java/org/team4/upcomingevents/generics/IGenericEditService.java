@@ -1,7 +1,7 @@
 package org.team4.upcomingevents.generics;
 
-public interface IGenericEditService<T1,T2> {
+public interface IGenericEditService<T,R> {
     
-    T2 save(T1 type) throws Exception;
+    R save(T type) throws Exception;
 
 }

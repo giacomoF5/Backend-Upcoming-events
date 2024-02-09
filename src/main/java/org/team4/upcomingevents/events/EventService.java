@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
+import org.team4.upcomingevents.generics.IGenericEditService;
+import org.team4.upcomingevents.generics.IGenericGetService;
 
 @Service
-public class EventService {
+public class EventService implements IGenericGetService<Event>,IGenericEditService<EventDto,Event> {
 
     EventRepository repository;
 

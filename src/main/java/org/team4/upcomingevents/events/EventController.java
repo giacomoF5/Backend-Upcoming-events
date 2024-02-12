@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
@@ -45,6 +46,11 @@ public class EventController {
     public ResponseEntity<Event> destroy(@PathVariable("id") Long id) throws Exception {
         Event deleted = eventService.delete(id);
         return ResponseEntity.accepted().body(deleted);
+    }
+
+    @PutMapping(path = "/{id}")
+    public void update(@PathVariable("id") Long id, @RequestBody EventDto eventDto) {
+        eventService.update(eventDto, id);
     }
 
 }

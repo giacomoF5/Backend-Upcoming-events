@@ -49,4 +49,8 @@ public class EventService implements IGenericGetService<Event>,IGenericEditServi
 
     }
 
+    public void delete(Long id) throws Exception {
+        repository.findById(id).orElseThrow( () -> new EventNotFoundException("Event does not exit"));
+        repository.deleteById(id);
+    }
 }

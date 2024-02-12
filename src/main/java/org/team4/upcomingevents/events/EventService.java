@@ -54,4 +54,17 @@ public class EventService implements IGenericGetService<Event>,IGenericEditServi
         repository.deleteById(id);
         return eventToDelete;
     }
+
+    @Override
+    public Event update(EventDto eventDto, Long id) {
+        Event event = repository.findById(id).orElseThrow( () -> new EventNotFoundException("Event does not exist"));
+
+        event.setTitle(eventDto.getTitle());
+        event.setDate(eventDto.getDate());
+        event.setHour(eventDto.getHour());
+        event.setPlace(eventDto.getPlace());
+        event.setDescription(eventDto.getDescription());
+
+        return repository.save(event);
+    }
 }

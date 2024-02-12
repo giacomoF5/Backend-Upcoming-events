@@ -42,8 +42,9 @@ public class EventController {
     }
 
     @DeleteMapping(path = "/{id}")
-    public void destroy(@PathVariable("id") Long id) throws Exception {
-        eventService.delete(id);
+    public ResponseEntity<Event> destroy(@PathVariable("id") Long id) throws Exception {
+        Event deleted = eventService.delete(id);
+        return ResponseEntity.accepted().body(deleted);
     }
 
 }

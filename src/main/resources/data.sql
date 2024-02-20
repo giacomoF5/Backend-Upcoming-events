@@ -6,3 +6,5 @@ INSERT INTO events(id_event,title,date,hour,place,description,capacity,is_outsta
 
 INSERT INTO roles(id_role,name) VALUES (DEFAULT,"ROLE_ADMIN");
 INSERT INTO roles(id_role,name) VALUES (DEFAULT,"ROLE_USER");
+
+INSERT INTO users(id_user,username,password) VALUES (DEFAULT,"user","password");

@@ -46,6 +46,7 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.PUT, endpoint + "/events/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.POST, endpoint + "/users/register").permitAll()
                         .requestMatchers(HttpMethod.GET, endpoint + "/login").hasAnyRole("ADMIN","USER")
+                        .requestMatchers(HttpMethod.GET, endpoint + "/events/{id}/subscription").hasAnyRole("USER")
                         .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session
@@ -82,9 +83,16 @@ public class SecurityConfiguration {
                 .roles("ADMIN")
                 .build();
 
+        UserDetails user = User.builder()
+            .username("user")
+            .password("$2a$12$8LegtLQWe717tIPvZeivjuqKnaAs5.bm0Q05.5GrAmcKzXw2NjoUO")
+            .roles("USER")
+            .build();
+
         Collection<UserDetails> users = new ArrayList<>();
 
         users.add(admin);
+        users.add(user);
 
         return new InMemoryUserDetailsManager(users);
     }

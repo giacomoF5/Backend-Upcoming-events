@@ -8,9 +8,9 @@ public class EventTest {
 
     @Test
     void testEventProperties() {
-        Event event = new Event(1L, "Rock", "01/01/1999", "08:30", "Madrid", "foo",0,false);
+        Event event = new Event(1L, "Rock", "01/01/1999", "08:30", "Madrid", "foo",0,false,null);
 
-        assertThat(event.getClass().getDeclaredFields().length, is(8));
+        assertThat(event.getClass().getDeclaredFields().length, is(9));
         assertThat(event.getId(), is(1L));
         assertThat(event.getTitle(), is("Rock"));
         assertThat(event.getDate(), is("01/01/1999"));

@@ -1,17 +1,22 @@
 package org.team4.upcomingevents.events;
 
+import java.util.Set;
+
+import org.team4.upcomingevents.users.User;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import jakarta.persistence.GenerationType;
 
 
@@ -21,8 +26,6 @@ import jakarta.persistence.GenerationType;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 public class Event {
 
     @Id
@@ -37,8 +40,13 @@ public class Event {
     @Column(columnDefinition = "TEXT")
     private String description;
     private int capacity;
+    @Builder.Default
     @Column(name = "is_outstanding")
     private boolean isOutstanding = false;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "events")
+    Set<User> users;
 
 }
 

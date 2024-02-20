@@ -34,7 +34,11 @@ public class Event {
     private String date;
     private String hour;
     private String place;
+    @Column(columnDefinition = "TEXT")
     private String description;
+    private int capacity;
+    @Column(name = "is_outstanding")
+    private boolean isOutstanding = false;
 
 }
 

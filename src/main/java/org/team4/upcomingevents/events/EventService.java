@@ -37,6 +37,8 @@ public class EventService implements IGenericGetService<Event>,IGenericEditServi
                                 .hour(eventDto.getHour())
                                 .place(eventDto.getPlace())
                                 .description(eventDto.getDescription())
+                                .capacity(eventDto.getCapacity())
+                                .isOutstanding(eventDto.isOutstanding())
                                 .build();
             repository.save(newEvent);
 

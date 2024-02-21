@@ -7,4 +7,8 @@ INSERT INTO events(id_event,title,date,hour,place,description,capacity,is_outsta
 INSERT INTO roles(id_role,name) VALUES (DEFAULT,"ROLE_ADMIN");
 INSERT INTO roles(id_role,name) VALUES (DEFAULT,"ROLE_USER");
 
-INSERT INTO users(id_user,username,password) VALUES (DEFAULT,"user","password");
+INSERT INTO users(id_user,username,password) VALUES (DEFAULT,"admin","$2a$12$8LegtLQWe717tIPvZeivjuqKnaAs5.bm0Q05.5GrAmcKzXw2NjoUO");
+INSERT INTO users(id_user,username,password) VALUES (DEFAULT,"user","$2a$12$8LegtLQWe717tIPvZeivjuqKnaAs5.bm0Q05.5GrAmcKzXw2NjoUO");
+
+INSERT INTO roles_users(role_id,user_id) VALUES (1,1);
+INSERT INTO roles_users(role_id,user_id) VALUES (2,2);

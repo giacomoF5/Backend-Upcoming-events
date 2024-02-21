@@ -1,7 +1,6 @@
 package org.team4.upcomingevents.subscriptions;
 
-import java.util.Set;
-
+import java.util.Collection;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -37,7 +36,7 @@ public class SubscriptionService {
         // descontamos 1 de capacidad
         if (event.getCapacity() != 0) {
             // asignar el evento al usuario
-            Set<Event> events = user.getEvents();
+            Collection<Event> events = user.getEvents();
             events.add(event);
             user.setEvents(events);
             userRepository.save(user);

@@ -7,15 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.team4.upcomingevents.generics.IGenericSubscription;
 import org.team4.upcomingevents.responses.Response;
 
 @RestController
 @RequestMapping(path = "${api-endpoint}")
 public class SubscriptionController {
 
-    SubscriptionService service;
+    IGenericSubscription service;
 
-    public SubscriptionController(SubscriptionService service) {
+    public SubscriptionController(IGenericSubscription service) {
         this.service = service;
     }
 

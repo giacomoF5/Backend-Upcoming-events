@@ -7,12 +7,13 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.team4.upcomingevents.events.Event;
 import org.team4.upcomingevents.events.EventService;
+import org.team4.upcomingevents.generics.IGenericSubscription;
 import org.team4.upcomingevents.users.User;
 import org.team4.upcomingevents.users.UserNotFoundException;
 import org.team4.upcomingevents.users.UserRepository;
 
 @Service
-public class SubscriptionService {
+public class SubscriptionService implements IGenericSubscription {
 
     EventService eventService;
     UserRepository userRepository;

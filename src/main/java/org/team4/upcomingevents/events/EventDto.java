@@ -18,5 +18,7 @@ public class EventDto {
     private String hour;
     private String place;
     private String description;
+    private int capacity;
+    private boolean isOutstanding;
 
 }

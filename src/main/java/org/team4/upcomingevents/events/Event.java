@@ -47,6 +47,7 @@ public class Event {
     @Builder.Default
     @Column(name = "is_outstanding")
     private boolean isOutstanding = false;
+    private String img;
 
     @JsonIgnore
     @ManyToMany(mappedBy = "events")

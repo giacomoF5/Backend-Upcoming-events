@@ -4,13 +4,24 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 import org.junit.jupiter.api.Test;
+
 public class EventTest {
 
     @Test
     void testEventProperties() {
-        Event event = new Event(1L, "Rock", "01/01/1999", "08:30", "Madrid", "foo",0,false,null);
+        Event event = Event.builder()
+                .id(1L)
+                .title("Rock")
+                .date("01/01/1999")
+                .hour("08:30")
+                .place("Madrid")
+                .description("foo")
+                .capacity(0)
+                .isOutstanding(false)
+                .img("image.jpg")
+                .build();
 
-        assertThat(event.getClass().getDeclaredFields().length, is(9));
+        assertThat(event.getClass().getDeclaredFields().length, is(10));
         assertThat(event.getId(), is(1L));
         assertThat(event.getTitle(), is("Rock"));
         assertThat(event.getDate(), is("01/01/1999"));
@@ -19,9 +30,8 @@ public class EventTest {
         assertThat(event.getDescription(), is("foo"));
         assertThat(event.getCapacity(), is(0));
         assertThat(event.isOutstanding(), is(false));
-        
-    }
+        assertThat(event.getImg(), is("image.jpg"));
 
-    
+    }
 
 }
